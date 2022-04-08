@@ -6,9 +6,19 @@
   This example code is in the public domain.
 
   https://www.thierry-pigot.fr
+
+
+  Conventions de cadence :
+  - Le rythme élémentaire est donné par la durée du point, le « ti ». Il se note par un point « . ».
+  - Un « taah » est conventionnellement 3 fois plus long qu’un « ti ». Il se note par un trait horizontal « – ».
+  - L’espacement entre les « ti » et « taah » dans une lettre a la longueur d’un « ti ». Il se note par le passage d’un symbole à l’autre.
+  - L’espacement entre les lettres d’un mot a pour longueur un « taah » (3 « ti »). Il se note par un espace.
+  - L’espacement entre les mots est d’au moins 5 « ti » (7 recommandés18, comme ici). Il se note par une barre oblique « / ».
+  
 */
 
 // the setup function runs once when you press reset or power the board
+
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
@@ -21,7 +31,7 @@ void espace_lettre() {
 }
 
 void espace_mot() {
-  delay(cadence*7);
+  delay(cadence*4); // 7 - le dernier espace_lettre (3), soit 4
 }
 
 
@@ -29,14 +39,14 @@ void ti(){
   digitalWrite(LED_BUILTIN, HIGH);
   delay(cadence);
   digitalWrite(LED_BUILTIN, LOW);
-  delay(100);
+  delay(cadence);
 }
 
 void taah(){
   digitalWrite(LED_BUILTIN, HIGH);
   delay(cadence*3);
   digitalWrite(LED_BUILTIN, LOW);
-  delay(100);
+  delay(cadence);
 }
 
 void a(){ ti(); taah(); espace_lettre(); }
@@ -77,12 +87,20 @@ void huit(){ taah(); taah(); taah(); ti(); ti(); espace_lettre(); }
 void neuf(){ taah(); taah(); taah(); taah(); ti(); espace_lettre(); }
 void zero(){ taah(); taah(); taah(); taah(); taah(); espace_lettre(); }
 
+void point() { ti(); taah(); ti(); taah(); ti(); taah(); espace_lettre(); }
+void virgule() { taah(); taah(); ti(); ti(); taah(); taah(); espace_lettre(); }
+void inter() { ti(); ti(); taah(); taah(); ti(); ti(); espace_lettre(); }
+void apo() { ti(); taah(); taah(); taah(); taah(); ti(); espace_lettre(); }
+void excla() { taah(); ti(); taah(); ti(); taah(); taah(); espace_lettre(); }
+void aro() { ti(); taah(); taah(); ti(); taah(); ti(); espace_lettre(); }
+
 // the loop function runs over and over again forever
 void loop() {
 
   //  bonjour thierry
   b(); o(); n(); j(); o(); u(); r(); espace_mot();
   t(); h(); i(); e(); r(); r(); y(); espace_mot();
+  virgule(); espace_mot();
 
   //  ne pas oublier de prendre du pain
   n(); e(); espace_mot();
@@ -92,5 +110,7 @@ void loop() {
   p(); r(); e(); n(); d(); r(); e(); espace_mot();
   d(); u(); espace_mot();
   p(); a(); i(); n(); espace_mot();
+  
+  point(); espace_mot();
 
 }
