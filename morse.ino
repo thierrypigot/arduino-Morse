@@ -14,82 +14,83 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
-void short_space() {
-  delay(300);
+int cadence = 200;
+
+void espace_lettre() {
+  delay(cadence*3);
 }
 
-void long_space() {
-  delay(1000);
+void espace_mot() {
+  delay(cadence*7);
 }
 
 
-void dot(){
+void ti(){
   digitalWrite(LED_BUILTIN, HIGH);
-  delay(200);
+  delay(cadence);
   digitalWrite(LED_BUILTIN, LOW);
-  delay(200);
+  delay(100);
 }
 
-void dash(){
+void taah(){
   digitalWrite(LED_BUILTIN, HIGH);
-  delay(500);
+  delay(cadence*3);
   digitalWrite(LED_BUILTIN, LOW);
-  delay(500);
+  delay(100);
 }
 
-void a(){ dot(); dash(); short_space(); }
-void b(){ dash(); dot(); dot(); dot(); short_space(); }
-void c(){ dash(); dot(); dash(); dot(); short_space(); }
-void d(){ dash(); dot(); dot(); short_space(); }
-void e(){ dot(); short_space(); }
-void f(){ dot(); dot(); dash(); dot(); short_space(); }
-void g(){ dash(); dash(); dot(); short_space(); }
-void h(){ dot(); dot(); dot(); dot(); short_space(); }
-void i(){ dot(); dot(); short_space(); }
-void j(){ dot(); dash(); dash(); dash(); short_space(); }
-void k(){ dash(); dot(); dash(); short_space(); }
-void l(){ dot(); dash(); dot(); dot(); short_space(); }
-void m(){ dash(); dash(); short_space(); }
-void n(){ dash(); dot(); short_space(); }
-void o(){ dash(); dash(); dash(); short_space(); }
-void p(){ dot(); dash(); dash(); dot(); short_space(); }
-void q(){ dash(); dash(); dot(); dash(); short_space(); }
-void r(){ dot(); dash(); dot(); short_space(); }
-void s(){ dot(); dot(); dot(); short_space(); }
-void t(){ dash(); short_space(); }
-void u(){ dot(); dot(); dash(); short_space(); }
-void v(){ dot(); dot(); dot(); dash(); short_space(); }
-void w(){ dot(); dash(); dash(); short_space(); }
-void x(){ dash(); dot(); dot(); dash(); short_space(); }
-void y(){ dash(); dot(); dash(); dash(); short_space(); }
-void z(){ dash(); dash(); dot(); dot(); short_space(); }
+void a(){ ti(); taah(); espace_lettre(); }
+void b(){ taah(); ti(); ti(); ti(); espace_lettre(); }
+void c(){ taah(); ti(); taah(); ti(); espace_lettre(); }
+void d(){ taah(); ti(); ti(); espace_lettre(); }
+void e(){ ti(); espace_lettre(); }
+void f(){ ti(); ti(); taah(); ti(); espace_lettre(); }
+void g(){ taah(); taah(); ti(); espace_lettre(); }
+void h(){ ti(); ti(); ti(); ti(); espace_lettre(); }
+void i(){ ti(); ti(); espace_lettre(); }
+void j(){ ti(); taah(); taah(); taah(); espace_lettre(); }
+void k(){ taah(); ti(); taah(); espace_lettre(); }
+void l(){ ti(); taah(); ti(); ti(); espace_lettre(); }
+void m(){ taah(); taah(); espace_lettre(); }
+void n(){ taah(); ti(); espace_lettre(); }
+void o(){ taah(); taah(); taah(); espace_lettre(); }
+void p(){ ti(); taah(); taah(); ti(); espace_lettre(); }
+void q(){ taah(); taah(); ti(); taah(); espace_lettre(); }
+void r(){ ti(); taah(); ti(); espace_lettre(); }
+void s(){ ti(); ti(); ti(); espace_lettre(); }
+void t(){ taah(); espace_lettre(); }
+void u(){ ti(); ti(); taah(); espace_lettre(); }
+void v(){ ti(); ti(); ti(); taah(); espace_lettre(); }
+void w(){ ti(); taah(); taah(); espace_lettre(); }
+void x(){ taah(); ti(); ti(); taah(); espace_lettre(); }
+void y(){ taah(); ti(); taah(); taah(); espace_lettre(); }
+void z(){ taah(); taah(); ti(); ti(); espace_lettre(); }
 
-void un(){ dot(); dash(); dash(); dash(); dash(); short_space(); }
-void deux(){ dot(); dot(); dash(); dash(); dash(); short_space(); }
-void trois(){ dot(); dot(); dot(); dash(); dash(); short_space(); }
-void quatre(){ dot(); dot(); dot(); dot(); dash(); short_space(); }
-void cinq(){ dot(); dot(); dot(); dot(); dot(); short_space(); }
-void six(){ dash(); dot(); dot(); dot(); dot(); short_space(); }
-void sept(){ dash(); dash(); dot(); dot(); dot(); short_space(); }
-void huit(){ dash(); dash(); dash(); dot(); dot(); short_space(); }
-void neuf(){ dash(); dash(); dash(); dash(); dot(); short_space(); }
-void zero(){ dash(); dash(); dash(); dash(); dash(); short_space(); }
+void un(){ ti(); taah(); taah(); taah(); taah(); espace_lettre(); }
+void deux(){ ti(); ti(); taah(); taah(); taah(); espace_lettre(); }
+void trois(){ ti(); ti(); ti(); taah(); taah(); espace_lettre(); }
+void quatre(){ ti(); ti(); ti(); ti(); taah(); espace_lettre(); }
+void cinq(){ ti(); ti(); ti(); ti(); ti(); espace_lettre(); }
+void six(){ taah(); ti(); ti(); ti(); ti(); espace_lettre(); }
+void sept(){ taah(); taah(); ti(); ti(); ti(); espace_lettre(); }
+void huit(){ taah(); taah(); taah(); ti(); ti(); espace_lettre(); }
+void neuf(){ taah(); taah(); taah(); taah(); ti(); espace_lettre(); }
+void zero(){ taah(); taah(); taah(); taah(); taah(); espace_lettre(); }
 
 // the loop function runs over and over again forever
 void loop() {
-  
 
   //  bonjour thierry
-  b(); o(); n(); j(); o(); u(); r(); long_space();
-  t(); h(); i(); e(); r(); r(); y(); long_space();
+  b(); o(); n(); j(); o(); u(); r(); espace_mot();
+  t(); h(); i(); e(); r(); r(); y(); espace_mot();
 
   //  ne pas oublier de prendre du pain
-  n(); e(); long_space();
-  p(); a(); s(); long_space();
-  o(); u(); b(); l(); i(); e(); r(); long_space();
-  d(); e(); long_space();
-  p(); r(); e(); n(); d(); r(); e(); long_space();
-  d(); u(); long_space();
-  p(); a(); i(); n(); long_space();  
-  
+  n(); e(); espace_mot();
+  p(); a(); s(); espace_mot();
+  o(); u(); b(); l(); i(); e(); r(); espace_mot();
+  d(); e(); espace_mot();
+  p(); r(); e(); n(); d(); r(); e(); espace_mot();
+  d(); u(); espace_mot();
+  p(); a(); i(); n(); espace_mot();
+
 }
